@@ -14,7 +14,7 @@ exports.handler = function (argv) {
   }
 
   // Create required directories
-  shell.mkdir([ "content", "static", "config" ]);
+  shell.mkdir([ "content", "static" ]);
 
   // Clone AwesomeDocs from its repo
   if (shell.exec("git clone --depth 1 https://github.com/AwesomeDocs/AwesomeDocs .awesome").code !== 0) {
@@ -29,7 +29,6 @@ exports.handler = function (argv) {
   shell.rm("-rf", ".git");
 
   // Create symlinks for the created directories
-  shell.ln("-sf", "../config/", "config/");
   shell.ln("-sf", "../content/", "content/");
   shell.ln("-sf", "../static/", "static/");
 
