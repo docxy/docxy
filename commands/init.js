@@ -32,12 +32,6 @@ exports.handler = function (argv) {
   shell.ln("-sf", "../content/", "content/");
   shell.ln("-sf", "../static/", "static/");
 
-  // Add initial content
-  shell.cd("content");
-  // Clone AwesomeDocs initial content
-  if (shell.exec("git clone --depth 1 https://github.com/AwesomeDocs/intial-content .").code !== 0) {
-    shell.echo("Error: Unable to fetch AwesommeDocs initial content");
-  }
   // Go back to main directory
   shell.cd("..");
 
