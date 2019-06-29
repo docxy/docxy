@@ -14,7 +14,7 @@ exports.handler = function (argv) {
   }
 
   // Build the documentation webisite
-  shell.exec("npm run build");
+  shell.exec("yarn build");
 
   // Go back to main directory
   shell.cd("..");
