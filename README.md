@@ -9,7 +9,7 @@ This tool is packaged as an executable that can be used globally.
 
 The AwesomeDocs CLI Tool is available via `npm` and should be installed globally by running the following command:
 ```bash
-npm install -g awesomedocs-cli
+npm install -g awesomedocs
 ```
 
 After installation, it can be accessed globally using the `awesomedocs` command.
