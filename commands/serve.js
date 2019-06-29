@@ -20,5 +20,5 @@ exports.handler = function (argv) {
   }
 
   // Start Gatsby development server
-  shell.exec("gatsby develop --port " + argv.port);
+  shell.exec("yarn start --port " + argv.port);
 };

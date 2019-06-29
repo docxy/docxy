@@ -13,9 +13,6 @@ exports.handler = function (argv) {
     shell.exit(1);
   }
 
-  // Create required directories
-  shell.mkdir([ "content", "static" ]);
-
   // Clone AwesomeDocs from its repo
   if (shell.exec("git clone --depth 1 https://github.com/AwesomeDocs/AwesomeDocs .awesome").code !== 0) {
     shell.echo("Error: Unable to fetch AwesommeDocs");
@@ -28,24 +25,18 @@ exports.handler = function (argv) {
   // Remove .git directory
   shell.rm("-rf", ".git");
 
-  // Create symlinks for the created directories
-  shell.ln("-sf", "../content/", "content/");
-  shell.ln("-sf", "../static/", "static/");
-
-  // Add initial content
-  shell.cd("content");
-  // Clone AwesomeDocs initial content
-  if (shell.exec("git clone --depth 1 https://github.com/AwesomeDocs/intial-content .").code !== 0) {
-    shell.echo("Error: Unable to fetch AwesommeDocs initial content");
-  }
-  // Go back to main directory
-  shell.cd("..");
-
   // Install Dependencies
   if (shell.exec("yarn").code !== 0) {
     shell.echo("Error: Unable to install AwesomeDocs dependencies");
     shell.exit(1);
   }
+
+  // Go back to main directory
+  shell.cd("..");
+
+  // Create symlinks for internal directories
+  shell.ln("-sf", ".awesome/content/", "content/");
+  shell.ln("-sf", ".awesome/static/", "static/");
 
   shell.echo("Success: Initialized AwesomeDocs");
 };
