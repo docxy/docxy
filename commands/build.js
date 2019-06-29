@@ -14,11 +14,11 @@ exports.handler = function (argv) {
   }
 
   // Build the documentation webisite
-  shell.exec("yarn build");
+  if (shell.exec("yarn build").code === 0) {
+    // Go back to main directory
+    shell.cd("..");
 
-  // Go back to main directory
-  shell.cd("..");
-
-  // Create symlink for build directory
-  shell.ln("-sf", ".awesome/public/", "build/");
+    // Create symlink for build directory
+    shell.ln("-sf", ".awesome/public/", "build/");
+  }
 };
