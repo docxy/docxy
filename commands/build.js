@@ -17,5 +17,5 @@ exports.handler = function (argv) {
   shell.exec("gatsby build");
 
   // Create symlink for build directory
-  shell.ln("-sf", ".awesome/public/", "build/");
+  shell.ln("-sf", "public/", "../build/");
 };
