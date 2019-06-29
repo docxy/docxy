@@ -25,18 +25,18 @@ exports.handler = function (argv) {
   // Remove .git directory
   shell.rm("-rf", ".git");
 
+  // Install Dependencies
+  if (shell.exec("yarn").code !== 0) {
+    shell.echo("Error: Unable to install AwesomeDocs dependencies");
+    shell.exit(1);
+  }
+
   // Go back to main directory
   shell.cd("..");
 
   // Create symlinks for internal directories
   shell.ln("-sf", ".awesome/content/", "content/");
   shell.ln("-sf", ".awesome/static/", "static/");
-
-  // Install Dependencies
-  if (shell.exec("yarn").code !== 0) {
-    shell.echo("Error: Unable to install AwesomeDocs dependencies");
-    shell.exit(1);
-  }
 
   shell.echo("Success: Initialized AwesomeDocs");
 };
