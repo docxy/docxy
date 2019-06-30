@@ -42,13 +42,13 @@ exports.handler = function (argv) {
 
   if (fs.existsSync(contentDir) && !fs.lstatSync(contentDir).isSymbolicLink()) {
     shell.rm("-rf", ".awesome/content");
-    shell.ln("-sf", "content/", ".awesome/content/");
+    shell.ln("-sf", contentDir, ".awesome/content/");
   } else {
     shell.ln("-sf", ".awesome/content/", "content/");
   }
   if (fs.existsSync(staticDir) && !fs.lstatSync(staticDir).isSymbolicLink()) {
     shell.rm("-rf", ".awesome/static");
-    shell.ln("-sf", "static/", ".awesome/static/");
+    shell.ln("-sf", staticDir, ".awesome/static/");
   } else {
     shell.ln("-sf", ".awesome/static/", "static/");
   }
