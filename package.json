@@ -11,6 +11,6 @@
   "license": "GPL-3.0",
   "dependencies": {
     "shelljs": "^0.8.3",
-    "yargs": "^13.2.4"
+    "yargs": "^16.0.3"
   }
 }
