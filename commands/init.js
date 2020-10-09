@@ -16,7 +16,7 @@ exports.handler = function (argv) {
   }
 
   // Clone AwesomeDocs from its repo
-  if (shell.exec("git clone --depth 1 https://github.com/AwesomeDocs/AwesomeDocs .awesome").code !== 0) {
+  if (shell.exec("git clone --single-branch --branch master --depth 1 https://github.com/AwesomeDocs/AwesomeDocs .awesome").code !== 0) {
     shell.echo("Error: Unable to fetch AwesommeDocs");
     shell.exit(1);
   }
