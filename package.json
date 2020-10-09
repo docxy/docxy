@@ -1,12 +1,12 @@
 {
   "name": "awesomedocs",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "An awesome documentation site generator!",
   "main": "index.js",
   "bin": {
     "awesomedocs": "./index.js"
   },
-  "repository": "https://github.com/AwesomeDocs/AwesomeDocs.git",
+  "repository": "https://github.com/AwesomeDocs/CLI.git",
   "author": "Sankarsan Kampa",
   "license": "GPL-3.0",
   "dependencies": {
