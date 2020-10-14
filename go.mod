@@ -1,4 +1,4 @@
-module github.com/docxy/cli
+module github.com/docxy/docxy
 
 go 1.15
 

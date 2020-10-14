@@ -7,7 +7,7 @@
 */
 package main
 
-import "github.com/docxy/cli/cmd"
+import "github.com/docxy/docxy/cmd"
 
 func main() {
 	cmd.Execute()

@@ -35,7 +35,7 @@ Example:
 		}
 
 		// get docxy
-		Exec("git", "clone", "--single-branch", "--branch", "main", "--depth", "1", "https://github.com/docxy/docxy", ".docxy")
+		Exec("git", "clone", "--single-branch", "--branch", "main", "--depth", "1", "https://github.com/docxy/docgen", ".docxy")
 
 		// change working directory to `.docxy`
 		Cd(".docxy")
